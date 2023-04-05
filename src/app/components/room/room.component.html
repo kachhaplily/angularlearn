@@ -3,6 +3,10 @@
   <p>number of room {{numberroom}}</p> </div>
 
   <div *ngIf="Room.avl>0">room list is here
+    <h1>json pipe</h1>
+
+    <div>{{Roomlist |json}}</div>
+    <h1>Json pipe end</h1>
 
 <table>
   <tr>
@@ -11,12 +15,12 @@
   </tr>
   <tr [ngClass]="'even'" *ngFor="let room of Roomlist  let e=even; let o=odd; ">
     <td> {{room.roomnumber}}</td>
-    <td>{{ room.roomtype}}</td>
-    <td>{{room.ameninites}}</td>
-    <td>{{room.price}}</td>
+    <td>{{ room.roomtype|uppercase}}</td>
+    <td>{{room.ameninites |lowercase}}</td>
+    <td>{{room.price | currency :'INR'}}</td>
     <td> <img [src] ="room.photos" alt="Image description" width="200px"></td>
-    <td>{{room.checkin}}</td>
-    <td>{{room.checkout}}</td>
+    <td>{{room.checkin |date:'short'}}</td>
+    <td>{{room.checkout |date:'short'}}</td>
   </tr>
 </table>
   </div>
