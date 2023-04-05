@@ -1,0 +1,8 @@
+.even{
+  background-color: rgb(85, 57, 57);
+  color: white;
+}
+.odd{
+  background-color: goldenrod;
+  color: black
+}

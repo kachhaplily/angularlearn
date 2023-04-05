@@ -1,2 +1,25 @@
-<p>hotel name is {{hotelName}}</p>
-<p>number of room {{numberroom}}</p>
+
+<div [hidden]="hideroom"><p>hotel name is {{hotelName}}</p>
+  <p>number of room {{numberroom}}</p> </div>
+
+  <div *ngIf="Room.avl>0">room list is here
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr [ngClass]="'even'" *ngFor="let room of Roomlist  let e=even; let o=odd; ">
+    <td> {{room.roomnumber}}</td>
+    <td>{{ room.roomtype}}</td>
+    <td>{{room.ameninites}}</td>
+    <td>{{room.price}}</td>
+    <td> <img [src] ="room.photos" alt="Image description" width="200px"></td>
+    <td>{{room.checkin}}</td>
+    <td>{{room.checkout}}</td>
+  </tr>
+</table>
+  </div>
+
+
+<button (click)="toggle()"> toggle</button>
